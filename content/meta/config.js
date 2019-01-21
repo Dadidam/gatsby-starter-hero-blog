@@ -1,10 +1,10 @@
 module.exports = {
-  siteTitle: "HeroBlog - a GatsbyJS starter", // <title>
+  siteTitle: "Amazing Fox Entertainment", // <title>
   shortSiteTitle: "HeroBlog - GatsbyJS starter", // <title> ending for posts and pages
-  siteDescription: "HeroBlog is a GatsbyJS starter.",
+  siteDescription: "Shows and events for russian speaking children in DMV area.",
   siteUrl: "https://gatsby-starter-hero-blog.greglobinski.com",
   // pathPrefix: "",
-  siteImage: "preview.jpg",
+  siteImage: "fox.jpg",
   siteLanguage: "en",
 
   /* author */
@@ -12,8 +12,8 @@ module.exports = {
   authorTwitterAccount: "greglobinski",
 
   /* info */
-  headerTitle: "greg lobinski",
-  headerSubTitle: "presents another one GatsbyJS starter",
+  headerTitle: "amazing fox entertainment",
+  headerSubTitle: "shows for russian speaking children in DMV area",
 
   /* manifest.json */
   manifestName: "HeroBlog - a GatsbyJS starter",
@@ -28,7 +28,7 @@ module.exports = {
   // Replace your email adress with md5-code.
   // Example https://www.gravatar.com/avatar/g.strainovic@gmail.com ->
   // gravatarImgMd5: "https://www.gravatar.com/avatar/1db853e4df386e8f699e4b35505dd8c6",
-  gravatarImgMd5: "",
+  gravatarImgMd5: "fox.jpg",
 
   // social
   authorSocialLinks: [

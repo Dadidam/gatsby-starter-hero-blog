@@ -11,7 +11,7 @@ const Hero = props => {
       <section id="video-section">
         <div className="overlay" />
         <video autoPlay muted loop playsInline>
-          <source src="/fox.mp4" type="video/mp4" />
+          <source src="fox.mp4" type="video/mp4" />
         </video>
       </section>
       {/* --- STYLES --- */}

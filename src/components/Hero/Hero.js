@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-
-import { FaArrowDown } from "react-icons/fa/";
+import bgVideo from "./fox.mp4";
+import poster from "./poster-white.jpg";
 
 const Hero = props => {
   const { scrollToContent, backgrounds, theme } = props;
@@ -11,7 +11,7 @@ const Hero = props => {
       <section id="video-section">
         <div className="overlay" />
         <video autoPlay muted loop playsInline>
-          <source src="fox.mp4" type="video/mp4" />
+          <source src={bgVideo} type="video/mp4" />
         </video>
       </section>
       {/* --- STYLES --- */}
@@ -53,7 +53,7 @@ const Hero = props => {
 
         @media (pointer: coarse) and (hover: none), only screen and (max-width: 500px) {
           #video-section {
-            background: url("poster-white.jpg") transparent no-repeat center center scroll;
+            background: url(${poster}) transparent no-repeat center center scroll;
             background-size: 80%;
           }
           #video-section video {

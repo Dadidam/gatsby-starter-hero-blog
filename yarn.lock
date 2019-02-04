@@ -720,6 +720,44 @@
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@csstools/sass-import-resolve/-/sass-import-resolve-1.0.0.tgz#32c3cdb2f7af3cd8f0dca357b592e7271f3831b5"
 
+"@lingui/babel-plugin-transform-js@2.7.3":
+  version "2.7.3"
+  resolved "https://registry.yarnpkg.com/@lingui/babel-plugin-transform-js/-/babel-plugin-transform-js-2.7.3.tgz#7e435cf93e69cf4ecd7acd6d3ad20fb5cc1e4f98"
+  integrity sha512-ZymQCbatcXEroA6QVZ6YsolEhMt75imF1IhRC6299NAXwaL9WyH4XaM70RI0/k/9IMg/uvVSXqWO3voBDyNgbA==
+
+"@lingui/babel-plugin-transform-react@2.7.3":
+  version "2.7.3"
+  resolved "https://registry.yarnpkg.com/@lingui/babel-plugin-transform-react/-/babel-plugin-transform-react-2.7.3.tgz#f80921ef2a7d7557214f17dab30128ae3f3471ef"
+  integrity sha512-RJTYdScoXJGDqLtKo2xLQmKZ+F3MnMqRazDjSFPk7bamNmSLRrc0Hwy98dvuDrHhw7vCEebfWoVSxD9N3EuDNg==
+
+"@lingui/babel-preset-react@^2.7.3":
+  version "2.7.3"
+  resolved "https://registry.yarnpkg.com/@lingui/babel-preset-react/-/babel-preset-react-2.7.3.tgz#74e1d074372b51556d3e8109ab6ce70e5f9fea90"
+  integrity sha512-CUrIiInVPXDhKGBvAxouzqHWsRk1+785JNLD3Ttp2qZmacfPdcZAiUY41eNku4neuwl+FpyGaZs04cs2s0NRlg==
+  dependencies:
+    "@lingui/babel-plugin-transform-js" "2.7.3"
+    "@lingui/babel-plugin-transform-react" "2.7.3"
+
+"@lingui/core@2.7.3":
+  version "2.7.3"
+  resolved "https://registry.yarnpkg.com/@lingui/core/-/core-2.7.3.tgz#9b2a12a56dd6129faf692fc6f47c49763b470a3f"
+  integrity sha512-3rmL/78NpbuulR4SAnYCipRdpCIntE9R4vCzWM6l8wuPgkv425ui9eoF8p/lMSxj7/hSy0ARyE8/6+aS+L4xpA==
+  dependencies:
+    babel-runtime "^6.26.0"
+    make-plural "^4.1.1"
+    messageformat-parser "^2.0.0"
+
+"@lingui/react@^2.7.3":
+  version "2.7.3"
+  resolved "https://registry.yarnpkg.com/@lingui/react/-/react-2.7.3.tgz#3b377189b04e406b225d3c1d8a196d004d7229fe"
+  integrity sha512-apKhH+QSHX9hF94gpcuPqSypkKzheWHMdiwNCy47HMEdiyBH9b16R3dMOGcAdBpiFRc9R4Gr2lRUBpL59Ey0Fw==
+  dependencies:
+    "@lingui/core" "2.7.3"
+    babel-runtime "^6.26.0"
+    hash-sum "^1.0.2"
+    hoist-non-react-statics "3.0.1"
+    prop-types "^15.6.2"
+
 "@mapbox/stylelint-processor-arbitrary-tags@^0.2.0":
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/@mapbox/stylelint-processor-arbitrary-tags/-/stylelint-processor-arbitrary-tags-0.2.0.tgz#4c2b50711bd9033a6c4f7f19e418b5f43f1a1e51"
@@ -5548,6 +5586,16 @@ gatsby-image@^2.0.5:
     prop-types "^15.6.1"
     react-testing-library "^4.1.7"
 
+gatsby-link@^2.0.10:
+  version "2.0.10"
+  resolved "https://registry.yarnpkg.com/gatsby-link/-/gatsby-link-2.0.10.tgz#40cc99c3e62e20c52b5672ad6f4647058a198190"
+  integrity sha512-dGeZW1Cs2YgqQaI1MaAblo3iAXkSfAnyWxA5VHsqOm4vrFgs3ixTNPUZ+vkJsh6N9//dAOuQn9q4pOT5OO68fA==
+  dependencies:
+    "@babel/runtime" "^7.0.0"
+    "@reach/router" "^1.1.1"
+    "@types/reach__router" "^1.0.0"
+    prop-types "^15.6.1"
+
 gatsby-link@^2.0.4:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/gatsby-link/-/gatsby-link-2.0.4.tgz#2af30f21171261d7b5ab61954704a399f81ca28f"
@@ -6512,6 +6560,11 @@ hash-mod@^0.0.5:
   version "0.0.5"
   resolved "https://registry.yarnpkg.com/hash-mod/-/hash-mod-0.0.5.tgz#daf1e4973a9116643467d54ee7690b43ef802ecc"
 
+hash-sum@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/hash-sum/-/hash-sum-1.0.2.tgz#33b40777754c6432573c120cc3808bbd10d47f04"
+  integrity sha1-M7QHd3VMZDJXPBIMw4CLvRDUfwQ=
+
 hash.js@^1.0.0, hash.js@^1.0.3:
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/hash.js/-/hash.js-1.1.3.tgz#340dedbe6290187151c1ea1d777a3448935df846"
@@ -6624,6 +6677,13 @@ hmac-drbg@^1.0.0:
 hoek@4.x.x:
   version "4.2.1"
   resolved "https://registry.yarnpkg.com/hoek/-/hoek-4.2.1.tgz#9634502aa12c445dd5a7c5734b572bb8738aacbb"
+
+hoist-non-react-statics@3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-3.0.1.tgz#fba3e7df0210eb9447757ca1a7cb607162f0a364"
+  integrity sha512-1kXwPsOi0OGQIZNVMPvgWJ9tSnGMiMfJdihqEzrPEXlHOBh9AAHXX/QYmAJTXztnz/K+PQ8ryCb4eGaN6HlGbQ==
+  dependencies:
+    react-is "^16.3.2"
 
 hoist-non-react-statics@^2.3.1:
   version "2.5.0"
@@ -8133,6 +8193,13 @@ make-dir@^1.0.0:
   dependencies:
     pify "^3.0.0"
 
+make-plural@^4.1.1:
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/make-plural/-/make-plural-4.3.0.tgz#f23de08efdb0cac2e0c9ba9f315b0dff6b4c2735"
+  integrity sha512-xTYd4JVHpSCW+aqDof6w/MebaMVNTVYBZhbB/vi513xXdiPT92JMVCo0Jq8W2UZnzYRFeVbQiQ+I25l13JuKvA==
+  optionalDependencies:
+    minimist "^1.2.0"
+
 mamacro@^0.0.3:
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/mamacro/-/mamacro-0.0.3.tgz#ad2c9576197c9f1abf308d0787865bd975a3f3e4"
@@ -8347,6 +8414,11 @@ merge-stream@^1.0.0, merge-stream@^1.0.1:
 merge2@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/merge2/-/merge2-1.2.1.tgz#271d2516ff52d4af7f7b710b8bf3e16e183fef66"
+
+messageformat-parser@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/messageformat-parser/-/messageformat-parser-2.0.0.tgz#e37efa0cb07b6784e5f3adc089cbf266208c01c7"
+  integrity sha512-C2ZjB5GlLeikkeoMCTcwEeb68LrFl9osxQzXHIPh0Wcj+43wNsoKpRRKq9rm204sAIdknrdcoeQMUnzvDuMf6g==
 
 methods@~1.1.2:
   version "1.1.2"
@@ -11254,6 +11326,11 @@ react-instantsearch@^5.2.2:
     react-instantsearch-core "^5.2.2"
     react-instantsearch-dom "^5.2.2"
     react-instantsearch-native "^5.2.2"
+
+react-is@^16.3.2:
+  version "16.7.0"
+  resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.7.0.tgz#c1bd21c64f1f1364c6f70695ec02d69392f41bfa"
+  integrity sha512-Z0VRQdF4NPDoI0tsXVMLkJLiwEBa+RP66g0xDHxgxysxSoCUccSten4RTF/UFvZF1dZvZ9Zu1sx+MDXwcOR34g==
 
 react-lazy-load@^3.0.12:
   version "3.0.13"

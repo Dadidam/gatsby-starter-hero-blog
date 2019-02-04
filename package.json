@@ -4,10 +4,13 @@
   "author": "Greg Lobinski <greglobinski@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "@lingui/babel-preset-react": "^2.7.3",
+    "@lingui/react": "^2.7.3",
     "antd": "^3.7.0",
     "fontfaceobserver": "^2.0.13",
     "gatsby": "^2.0.21",
     "gatsby-image": "^2.0.5",
+    "gatsby-link": "^2.0.10",
     "gatsby-plugin-algolia": "^0.1.0",
     "gatsby-plugin-catch-links": "^2.0.2",
     "gatsby-plugin-feed": "^2.0.5",
@@ -105,5 +108,11 @@
     "stylelint-config-standard": "^18.2.0",
     "url-loader": "^1.1.1",
     "webpack-bundle-analyzer": "^2.13.1"
+  },
+  "lingui": {
+    "fallbackLocale": "en",
+    "sourceLocale": "en",
+    "localeDir": "src/locale",
+    "format": "minimal"
   }
 }

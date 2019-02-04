@@ -3,10 +3,14 @@ import FontFaceObserver from "fontfaceobserver";
 import PropTypes from "prop-types";
 import React from "react";
 import { graphql, StaticQuery } from "gatsby";
+import { I18nProvider } from "@lingui/react";
+import { navigateTo } from "gatsby-link";
+import { catalogs, prefix, deprefix, langFromPath } from "../i18n-config";
 
 import { getScreenWidth, timeoutThrottlerHandler } from "../utils/helpers";
 import Footer from "../components/Footer/";
 import Header from "../components/Header";
+import LangSelector from "../components/LangSelector";
 
 export const ThemeContext = React.createContext(null);
 export const ScreenWidthContext = React.createContext(0);
@@ -75,7 +79,13 @@ class Layout extends React.Component {
     );
   };
 
+  onLangChange = lang => {
+    debugger
+    navigateTo(prefix(lang) + deprefix(this.props.location.pathname));
+  };
+
   render() {
+    const lang = langFromPath(this.props.location.pathname);
     return (
       <StaticQuery
         query={graphql`
@@ -111,70 +121,73 @@ class Layout extends React.Component {
           } = data;
 
           return (
-            <ThemeContext.Provider value={this.state.theme}>
-              <FontLoadedContext.Provider value={this.state.font400loaded}>
-                <ScreenWidthContext.Provider value={this.state.screenWidth}>
-                  <React.Fragment>
-                    <Header
-                      path={this.props.location.pathname}
-                      pages={pages}
-                      theme={this.state.theme}
-                    />
-                    <main>{children}</main>
-                    <Footer html={footnoteHTML} theme={this.state.theme} />
+            <I18nProvider language={lang} catalogs={catalogs}>
+              <ThemeContext.Provider value={this.state.theme}>
+                <FontLoadedContext.Provider value={this.state.font400loaded}>
+                  <ScreenWidthContext.Provider value={this.state.screenWidth}>
+                    <React.Fragment>
+                      <LangSelector lang={lang} onLangClick={this.onLangChange} />
+                      <Header
+                        path={this.props.location.pathname}
+                        pages={pages}
+                        theme={this.state.theme}
+                      />
+                      <main>{children}</main>
+                      <Footer html={footnoteHTML} theme={this.state.theme} />
 
-                    {/* --- STYLES --- */}
-                    <style jsx>{`
-                      main {
-                        min-height: 80vh;
-                      }
-                    `}</style>
-                    <style jsx global>{`
-                      html {
-                        box-sizing: border-box;
-                      }
-                      *,
-                      *:after,
-                      *:before {
-                        box-sizing: inherit;
-                        margin: 0;
-                        padding: 0;
-                      }
-                      body {
-                        font-family: ${this.state.font400loaded
-                          ? "'Open Sans', sans-serif;"
-                          : "Arial, sans-serif;"};
-                      }
-                      h1,
-                      h2,
-                      h3 {
-                        font-weight: ${this.state.font600loaded ? 600 : 400};
-                        line-height: 1.1;
-                        letter-spacing: -0.03em;
-                        margin: 0;
-                      }
-                      h1 {
-                        letter-spacing: -0.04em;
-                      }
-                      p {
-                        margin: 0;
-                      }
-                      strong {
-                        font-weight: ${this.state.font600loaded ? 600 : 400};
-                      }
-                      a {
-                        text-decoration: none;
-                        color: #666;
-                      }
-                      main {
-                        width: auto;
-                        display: block;
-                      }
-                    `}</style>
-                  </React.Fragment>
-                </ScreenWidthContext.Provider>
-              </FontLoadedContext.Provider>
-            </ThemeContext.Provider>
+                      {/* --- STYLES --- */}
+                      <style jsx>{`
+                        main {
+                          min-height: 80vh;
+                        }
+                      `}</style>
+                      <style jsx global>{`
+                        html {
+                          box-sizing: border-box;
+                        }
+                        *,
+                        *:after,
+                        *:before {
+                          box-sizing: inherit;
+                          margin: 0;
+                          padding: 0;
+                        }
+                        body {
+                          font-family: ${this.state.font400loaded
+                            ? "'Open Sans', sans-serif;"
+                            : "Arial, sans-serif;"};
+                        }
+                        h1,
+                        h2,
+                        h3 {
+                          font-weight: ${this.state.font600loaded ? 600 : 400};
+                          line-height: 1.1;
+                          letter-spacing: -0.03em;
+                          margin: 0;
+                        }
+                        h1 {
+                          letter-spacing: -0.04em;
+                        }
+                        p {
+                          margin: 0;
+                        }
+                        strong {
+                          font-weight: ${this.state.font600loaded ? 600 : 400};
+                        }
+                        a {
+                          text-decoration: none;
+                          color: #666;
+                        }
+                        main {
+                          width: auto;
+                          display: block;
+                        }
+                      `}</style>
+                    </React.Fragment>
+                  </ScreenWidthContext.Provider>
+                </FontLoadedContext.Provider>
+              </ThemeContext.Provider>
+            </I18nProvider>
           );
         }}
       />

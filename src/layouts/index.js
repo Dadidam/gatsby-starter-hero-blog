@@ -3,6 +3,9 @@ import FontFaceObserver from "fontfaceobserver";
 import PropTypes from "prop-types";
 import React from "react";
 import { graphql, StaticQuery } from "gatsby";
+import { getCurrentLangKey, getLangs, getUrlForLang } from "ptz-i18n";
+import { IntlProvider } from "react-intl";
+import "intl";
 
 import { getScreenWidth, timeoutThrottlerHandler } from "../utils/helpers";
 import Footer from "../components/Footer/";
@@ -101,80 +104,100 @@ class Layout extends React.Component {
               id
               html
             }
+            site {
+              siteMetadata {
+                languages {
+                  defaultLangKey
+                  langs
+                }      
+              }
+            }
           }
         `}
         render={data => {
-          const { children } = this.props;
+          const { children, i18nMessages, location } = this.props;
           const {
             footnote: { html: footnoteHTML },
             pages: { edges: pages }
           } = data;
 
-          return (
-            <ThemeContext.Provider value={this.state.theme}>
-              <FontLoadedContext.Provider value={this.state.font400loaded}>
-                <ScreenWidthContext.Provider value={this.state.screenWidth}>
-                  <React.Fragment>
-                    <Header
-                      path={this.props.location.pathname}
-                      pages={pages}
-                      theme={this.state.theme}
-                    />
-                    <main>{children}</main>
-                    <Footer html={footnoteHTML} theme={this.state.theme} />
+          const url = location.pathname;
+          const { langs, defaultLangKey } = data.site.siteMetadata.languages;
+          const langKey = getCurrentLangKey(langs, defaultLangKey, url);
+          const homeLink = `/${langKey}`.replace(`/${defaultLangKey}/`, "/");
+          const langsMenu = getLangs(langs, langKey, getUrlForLang(homeLink, url)).map(item => ({
+            ...item,
+            link: item.link.replace(`/${defaultLangKey}/`, "/")
+          }));
 
-                    {/* --- STYLES --- */}
-                    <style jsx>{`
-                      main {
-                        min-height: 80vh;
-                      }
-                    `}</style>
-                    <style jsx global>{`
-                      html {
-                        box-sizing: border-box;
-                      }
-                      *,
-                      *:after,
-                      *:before {
-                        box-sizing: inherit;
-                        margin: 0;
-                        padding: 0;
-                      }
-                      body {
-                        font-family: ${this.state.font400loaded
-                          ? "'Open Sans', sans-serif;"
-                          : "Arial, sans-serif;"};
-                      }
-                      h1,
-                      h2,
-                      h3 {
-                        font-weight: ${this.state.font600loaded ? 600 : 400};
-                        line-height: 1.1;
-                        letter-spacing: -0.03em;
-                        margin: 0;
-                      }
-                      h1 {
-                        letter-spacing: -0.04em;
-                      }
-                      p {
-                        margin: 0;
-                      }
-                      strong {
-                        font-weight: ${this.state.font600loaded ? 600 : 400};
-                      }
-                      a {
-                        text-decoration: none;
-                        color: #666;
-                      }
-                      main {
-                        width: auto;
-                        display: block;
-                      }
-                    `}</style>
-                  </React.Fragment>
-                </ScreenWidthContext.Provider>
-              </FontLoadedContext.Provider>
-            </ThemeContext.Provider>
+          return (
+            <IntlProvider locale={langKey} messages={i18nMessages}>
+              <ThemeContext.Provider value={this.state.theme}>
+                <FontLoadedContext.Provider value={this.state.font400loaded}>
+                  <ScreenWidthContext.Provider value={this.state.screenWidth}>
+                    <React.Fragment>
+                      <Header
+                        path={this.props.location.pathname}
+                        pages={pages}
+                        theme={this.state.theme}
+                        langs={langsMenu}
+                      />
+                      <main>{children}</main>
+                      <Footer html={footnoteHTML} theme={this.state.theme} />
+
+                      {/* --- STYLES --- */}
+                      <style jsx>{`
+                        main {
+                          min-height: 80vh;
+                        }
+                      `}</style>
+                      <style jsx global>{`
+                        html {
+                          box-sizing: border-box;
+                        }
+                        *,
+                        *:after,
+                        *:before {
+                          box-sizing: inherit;
+                          margin: 0;
+                          padding: 0;
+                        }
+                        body {
+                          font-family: ${this.state.font400loaded
+                            ? "'Open Sans', sans-serif;"
+                            : "Arial, sans-serif;"};
+                        }
+                        h1,
+                        h2,
+                        h3 {
+                          font-weight: ${this.state.font600loaded ? 600 : 400};
+                          line-height: 1.1;
+                          letter-spacing: -0.03em;
+                          margin: 0;
+                        }
+                        h1 {
+                          letter-spacing: -0.04em;
+                        }
+                        p {
+                          margin: 0;
+                        }
+                        strong {
+                          font-weight: ${this.state.font600loaded ? 600 : 400};
+                        }
+                        a {
+                          text-decoration: none;
+                          color: #666;
+                        }
+                        main {
+                          width: auto;
+                          display: block;
+                        }
+                      `}</style>
+                    </React.Fragment>
+                  </ScreenWidthContext.Provider>
+                </FontLoadedContext.Provider>
+              </ThemeContext.Provider>
+            </IntlProvider>
           );
         }}
       />

@@ -1,6 +1,7 @@
 require("dotenv").config();
 const config = require("./content/meta/config");
 const transformer = require("./src/utils/algolia");
+const languages = require("./src/data/languages");
 
 const query = `{
   allMarkdownRemark( filter: { fields: { slug: { ne: null } } }) {
@@ -45,7 +46,8 @@ module.exports = {
     },
     facebook: {
       appId: process.env.FB_APP_ID ? process.env.FB_APP_ID : ""
-    }
+    },
+    languages
   },
   plugins: [
     `gatsby-plugin-styled-jsx`, // the plugin's code is inserted directly to gatsby-node.js and gatsby-ssr.js files
@@ -259,6 +261,16 @@ module.exports = {
       resolve: "gatsby-plugin-react-svg",
       options: {
         include: /svg-icons/
+      }
+    },
+    `gatsby-plugin-react-helmet`,
+    {
+      resolve: "gatsby-plugin-i18n",
+      options: {
+        langKeyForNull: "any",
+        langKeyDefault: languages.defaultLangKey,
+        useLangKeyLayout: true,
+        prefixDefault: false
       }
     }
   ]

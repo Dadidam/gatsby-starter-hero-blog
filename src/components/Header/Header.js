@@ -1,7 +1,9 @@
-import { Link } from "gatsby";
+// import { Link } from "gatsby";
 import PropTypes from "prop-types";
 import React from "react";
 import VisibilitySensor from "react-visibility-sensor";
+import Link from "gatsby-link";
+import { Trans, withI18n } from "@lingui/react";
 
 import { ScreenWidthContext, FontLoadedContext } from "../../layouts";
 import config from "../../../content/meta/config";
@@ -30,13 +32,13 @@ class Header extends React.Component {
   };
 
   render() {
-    const { pages, path, theme } = this.props;
+    const { pages, path, theme, i18n } = this.props;
     const { fixed } = this.state;
 
     return (
       <React.Fragment>
         <header className={`header ${this.getHeaderSize()}`}>
-          <Link to="/" className="logoType">
+          <Link to={i18n.t`/`} className="logoType">
             <div className="logo">
               <img
                 src={config.gravatarImgMd5 == "" ? avatar : config.gravatarImgMd5}
@@ -45,7 +47,7 @@ class Header extends React.Component {
             </div>
             <div className="type">
               <h1>{config.headerTitle}</h1>
-              <h2>{config.headerSubTitle}</h2>
+              <h2><Trans>{config.headerSubTitle}</Trans></h2>
             </div>
           </Link>
           <FontLoadedContext.Consumer>

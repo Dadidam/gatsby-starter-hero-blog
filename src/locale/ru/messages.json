@@ -4,8 +4,12 @@
   "Welcome to your new Gatsby site.": "Добропожаловать.",
   "Now go build something great.": "Замутим ништячков прикольчиков.",
   "/page-2": "/ru/page-2",
+  "/shows": "/ru/shows",
   "Go to page 2": "На страницу 2",
   "Hi from the second page": "Вы уже на второй странице",
   "/": "/ru/",
-  "Go back to the homepage": "На главную"
+  "Go back to the homepage": "На главную",
+  "Other Amazing Shows": "Чудо шоу",
+  "Posts by categories": "Почт по категориям",
+  "shows for russian speaking children in DMV area": "детские представления для детей"
 }

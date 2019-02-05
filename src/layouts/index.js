@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import React from "react";
 import { graphql, StaticQuery } from "gatsby";
 import { I18nProvider } from "@lingui/react";
-import { navigateTo } from "gatsby-link";
+import { navigate } from "gatsby-link";
 import { catalogs, prefix, deprefix, langFromPath } from "../i18n-config";
 
 import { getScreenWidth, timeoutThrottlerHandler } from "../utils/helpers";
@@ -80,8 +80,7 @@ class Layout extends React.Component {
   };
 
   onLangChange = lang => {
-    debugger
-    navigateTo(prefix(lang) + deprefix(this.props.location.pathname));
+    navigate(prefix(lang) + deprefix(this.props.location.pathname));
   };
 
   render() {

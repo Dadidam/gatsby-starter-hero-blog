@@ -18,7 +18,12 @@ const LangSelector = props => (
   <div
     style={{
       background: "rebeccapurple",
-      marginBottom: "1.45rem"
+      marginBottom: "1.45rem",
+      height: 100,
+      position: 'absolute',
+      top: 0,
+      left: '50%',
+      zIndex: 111
     }}
   >
     {console.log(props)}

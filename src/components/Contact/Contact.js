@@ -7,6 +7,10 @@ import Input from "antd/lib/input";
 import PropTypes from "prop-types";
 import React from "react";
 
+import { graphql } from "gatsby";
+import { withNamespaces } from "react-i18next";
+import { withI18next } from "gatsby-plugin-i18next";
+
 const FormItem = Form.Item;
 const { TextArea } = Input;
 import "antd/lib/form/style/index.css";
@@ -58,7 +62,7 @@ const Contact = props => {
       <ThemeContext.Consumer>
         {theme => (
           <div>
-            <h1>Contact Info:</h1>
+            <h1>{props.t("Contact Info")}:</h1>
             <br />
             <div>1234 Gallows Rd St. 243</div>
             <div>Vienna, VA 24102</div>
@@ -76,4 +80,12 @@ Contact.propTypes = {
 
 const ContactForm = Form.create({})(Contact);
 
-export default ContactForm;
+export default withI18next()(withNamespaces()(ContactForm));
+
+export const query = graphql`
+  query($lng: String!) {
+    locales: allLocale(filter: { lng: { eq: $lng }, ns: { eq: "messages" } }) {
+      ...TranslationFragment
+    }
+  }
+`;

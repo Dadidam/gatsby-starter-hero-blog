@@ -3,6 +3,8 @@ import FontFaceObserver from "fontfaceobserver";
 import PropTypes from "prop-types";
 import React from "react";
 import { graphql, StaticQuery } from "gatsby";
+import { withNamespaces } from "react-i18next";
+import { Head } from "gatsby-plugin-i18next";
 
 import { getScreenWidth, timeoutThrottlerHandler } from "../utils/helpers";
 import Footer from "../components/Footer/";
@@ -104,7 +106,7 @@ class Layout extends React.Component {
           }
         `}
         render={data => {
-          const { children } = this.props;
+          const { children, t } = this.props;
           const {
             footnote: { html: footnoteHTML },
             pages: { edges: pages }
@@ -115,10 +117,16 @@ class Layout extends React.Component {
               <FontLoadedContext.Provider value={this.state.font400loaded}>
                 <ScreenWidthContext.Provider value={this.state.screenWidth}>
                   <React.Fragment>
+                    <Head hreflang>
+                      <title>{t("Gatsby I18next")}</title>
+                      <meta name="description" content="Example Gatsby site with i18next" />
+                      <meta name="keywords" content="gatsby, react, i18next" />
+                    </Head>
                     <Header
                       path={this.props.location.pathname}
                       pages={pages}
                       theme={this.state.theme}
+                      siteTitle={t("This is Gatsby with I18next")}
                     />
                     <main>{children}</main>
                     <Footer html={footnoteHTML} theme={this.state.theme} />
@@ -188,7 +196,7 @@ Layout.propTypes = {
   location: PropTypes.object.isRequired
 };
 
-export default Layout;
+export default withNamespaces('defaultNamespace')(Layout);
 
 //eslint-disable-next-line no-undef
 /*

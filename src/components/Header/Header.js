@@ -1,4 +1,5 @@
-import { Link } from "gatsby";
+// import { Link } from "gatsby";
+import { Link } from "gatsby-plugin-i18next";
 import PropTypes from "prop-types";
 import React from "react";
 import VisibilitySensor from "react-visibility-sensor";
@@ -6,6 +7,7 @@ import VisibilitySensor from "react-visibility-sensor";
 import { ScreenWidthContext, FontLoadedContext } from "../../layouts";
 import config from "../../../content/meta/config";
 import Menu from "../Menu";
+import LanguageSwitcher from "../LanguageSwitcher";
 
 import avatar from "../../images/jpg/avatar.jpg";
 
@@ -48,6 +50,7 @@ class Header extends React.Component {
               <h2>{config.headerSubTitle}</h2>
             </div>
           </Link>
+          <LanguageSwitcher />
           <FontLoadedContext.Consumer>
             {loaded => (
               <ScreenWidthContext.Consumer>

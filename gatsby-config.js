@@ -67,6 +67,22 @@ module.exports = {
       }
     },
     {
+      resolve: `gatsby-plugin-i18next`,
+      options: {
+        availableLngs: ["en", "ru"],
+        fallbackLng: "en",
+        saveMissing: true,
+        debug: true
+      }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/locale`,
+        name: `locale`
+      }
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,

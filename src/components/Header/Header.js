@@ -2,6 +2,7 @@ import { Link } from "gatsby";
 import PropTypes from "prop-types";
 import React from "react";
 import VisibilitySensor from "react-visibility-sensor";
+import { MdLanguage } from "react-icons/md";
 
 import { ScreenWidthContext, FontLoadedContext } from "../../layouts";
 import config from "../../../content/meta/config";
@@ -47,6 +48,18 @@ class Header extends React.Component {
               <h1>{config.headerTitle}</h1>
               <h2>{config.headerSubTitle}</h2>
             </div>
+          </Link>
+          <Link
+            to="/ru/"
+            style={{
+              position: "absolute",
+              left: "50%",
+              zIndex: 15,
+              color: "white",
+              fontSize: "1.25em"
+            }}
+          >
+            <MdLanguage /> Russian
           </Link>
           <FontLoadedContext.Consumer>
             {loaded => (

@@ -2,4 +2,5 @@
 title: author
 ---
 
-**Mr. Gatsby** Proin ornare ligula eu tellus tempus elementum. Aenean [bibendum](/) iaculis mi, nec blandit lacus interdum vitae. Vestibulum non nibh risus, a scelerisque purus. Blandit lacus interdum vitae. Vestibulum non nibh risus, a scelerisque purus.
+**Amazing Fox Entertainment** - некоммерческая организация, действующая на территории США. Наша
+основная задача – сохранение культурного наследия в русскоязычных и двуязычных семьях. Мы работаем с детьми, для которых русский язык не является основным. Цель работы – вызвать интерес к изучению языка, познакомить с увлекательным миром русской литературы, сказок, поэзии и фольклора.

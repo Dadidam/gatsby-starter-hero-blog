@@ -1,19 +1,20 @@
 module.exports = {
   siteTitle: "Amazing Fox Entertainment", // <title>
-  shortSiteTitle: "HeroBlog - GatsbyJS starter", // <title> ending for posts and pages
-  siteDescription: "Shows and events for russian speaking children in DMV area.",
-  siteUrl: "https://gatsby-starter-hero-blog.greglobinski.com",
+  shortSiteTitle: "Amazing Fox Entertainment — Русский язык через театр", // <title> ending for posts and pages
+  siteDescription:
+    "Мы работаем с детьми, для которых русский язык не является основным. Цель работы – вызвать интерес к изучению языка, познакомить с увлекательным миром русской литературы, сказок, поэзии и фольклора.",
+  siteUrl: "https://http://amazingfox.org",
   // pathPrefix: "",
   siteImage: "fox.jpg",
-  siteLanguage: "en",
+  siteLanguage: "ru",
 
   /* author */
-  authorName: "greg lobinski",
-  authorTwitterAccount: "greglobinski",
+  authorName: "Willy",
+  authorTwitterAccount: "penzyak",
 
   /* info */
-  headerTitle: "amazing fox entertainment",
-  headerSubTitle: "shows for russian speaking children in DMV area",
+  headerTitle: "Amazing Fox Entertainment",
+  headerSubTitle: "Русский язык через театр",
 
   /* manifest.json */
   manifestName: "HeroBlog - a GatsbyJS starter",
@@ -32,8 +33,9 @@ module.exports = {
 
   // social
   authorSocialLinks: [
-    { name: "github", url: "https://github.com/greglobinski" },
-    { name: "twitter", url: "https://twitter.com/greglobinski" },
-    { name: "facebook", url: "http://facebook.com/greglobinski" }
+    // { name: "github", url: "https://github.com/greglobinski" },
+    // { name: "twitter", url: "https://twitter.com/greglobinski" },
+    { name: "facebook", url: "https://www.facebook.com/Amazingfox.org/" },
+    { name: "instagram", url: "https://instagram.com/amazing_fox_ent" }
   ]
 };

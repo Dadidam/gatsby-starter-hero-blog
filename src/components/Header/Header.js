@@ -2,7 +2,7 @@ import { Link } from "gatsby";
 import PropTypes from "prop-types";
 import React from "react";
 import VisibilitySensor from "react-visibility-sensor";
-import { MdLanguage } from "react-icons/md";
+// import { MdLanguage } from "react-icons/md";
 
 import { ScreenWidthContext, FontLoadedContext } from "../../layouts";
 import config from "../../../content/meta/config";
@@ -49,7 +49,7 @@ class Header extends React.Component {
               <h2>{config.headerSubTitle}</h2>
             </div>
           </Link>
-          <Link
+          {/* <Link
             to="/ru/"
             style={{
               position: "absolute",
@@ -60,7 +60,7 @@ class Header extends React.Component {
             }}
           >
             <MdLanguage /> Russian
-          </Link>
+          </Link> */}
           <FontLoadedContext.Consumer>
             {loaded => (
               <ScreenWidthContext.Consumer>

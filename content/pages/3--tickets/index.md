@@ -1,9 +1,6 @@
 ---
-title: Buy Tickets Online
-menuTitle: Buy Tickets
+title: Покупка билетов
+menuTitle: Купить билеты
 ---
 
-### Buy Tickets Online
-
-Links to ticket sellers.
-Links to ticket sellers.
+Мы уже начали подготовку к новому театральному сезону. Билеты на наши представления появятся заблаговременно. Следите за новостями в [нашей группе на Facebook](https://www.facebook.com/amazingfox.org).

@@ -2,6 +2,6 @@
 title: footnote
 ---
 
-- amazing fox entertainment
-- non profit organization
+- Amazing Fox Entertainment
+- Nonprofit organization
 - &copy; 2016-2019

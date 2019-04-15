@@ -58,11 +58,11 @@ const Contact = props => {
       <ThemeContext.Consumer>
         {theme => (
           <div>
-            <h1>Contact Info:</h1>
+            <h1>Email для сотрудничества:</h1>
             <br />
-            <div>1234 Gallows Rd St. 243</div>
-            <div>Vienna, VA 24102</div>
-            <div>Phone: +1 202-717-8181</div>
+            <div>
+              <a href="mailto:info@amazingfox.org">info@amazingfox.org</a>
+            </div>
           </div>
         )}
       </ThemeContext.Consumer>

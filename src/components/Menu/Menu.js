@@ -2,10 +2,10 @@ import React from "react";
 import PropTypes from "prop-types";
 require("core-js/fn/array/from");
 
-import { FaHome } from "react-icons/fa/";
+import { FaHome, FaEnvelope, FaTicketAlt, FaTheaterMasks } from "react-icons/fa/";
 // import { FaSearch } from "react-icons/fa/";
-import { FaEnvelope } from "react-icons/fa/";
-// import { FaTag } from "react-icons/fa/";
+// import { FaEnvelope } from "react-icons/fa/";
+// import { FaTicketAlt } from "react-icons/fa/";
 
 import Item from "./Item";
 import Expand from "./Expand";
@@ -15,18 +15,20 @@ class Menu extends React.Component {
     super(props);
     this.itemList = React.createRef();
 
-    const pages = props.pages.map(page => ({
-      to: page.node.fields.slug,
-      label: page.node.frontmatter.menuTitle
-        ? page.node.frontmatter.menuTitle
-        : page.node.frontmatter.title
-    }));
+    // const pages = props.pages.map(page => ({
+    //   to: page.node.fields.slug,
+    //   label: page.node.frontmatter.menuTitle
+    //     ? page.node.frontmatter.menuTitle
+    //     : page.node.frontmatter.title
+    // }));
 
     this.items = [
       { to: "/", label: "Главная", icon: FaHome },
       // { to: "/category/", label: "Categories", icon: FaTag },
       // { to: "/search/", label: "Search", icon: FaSearch },
-      ...pages,
+      // ...pages,
+      { to: "/about/", label: "Наш театр", icon: FaTheaterMasks },
+      { to: "/events/", label: "Купить билеты", icon: FaTicketAlt },
       { to: "/contact/", label: "Контакты", icon: FaEnvelope }
     ];
 

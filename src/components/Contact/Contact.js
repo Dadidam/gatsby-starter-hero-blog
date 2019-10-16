@@ -1,14 +1,15 @@
 /* eslint no-unused-vars: 0 */
 
 import { navigate } from "gatsby";
-import Button from "antd/lib/button";
+// import Button from "antd/lib/button";
 import Form from "antd/lib/form";
-import Input from "antd/lib/input";
+// import Input from "antd/lib/input";
 import PropTypes from "prop-types";
 import React from "react";
 
-const FormItem = Form.Item;
-const { TextArea } = Input;
+// const FormItem = Form.Item;
+// const { TextArea } = Input;
+// import FaFacebook from "react-icons/fa";
 import "antd/lib/form/style/index.css";
 import "antd/lib/input/style/index.css";
 import "antd/lib/button/style/index.css";
@@ -58,11 +59,20 @@ const Contact = props => {
       <ThemeContext.Consumer>
         {theme => (
           <div>
-            <h1>Email для сотрудничества:</h1>
+            <h1>Информация по телефонам:</h1>
             <br />
-            <div>
-              <a href="mailto:info@amazingfox.org">info@amazingfox.org</a>
-            </div>
+            <p>240 330 0600</p>
+            <p>240 731 5387</p>
+            <br />
+            <p>
+              <a
+                href="https://www.facebook.com/Amazingfox.org/"
+                target="blank"
+                style={{ textDecoration: "underline" }}
+              >
+                Наша группа на Фейсбук
+              </a>
+            </p>
           </div>
         )}
       </ThemeContext.Consumer>

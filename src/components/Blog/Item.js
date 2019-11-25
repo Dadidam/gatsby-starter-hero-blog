@@ -27,28 +27,74 @@ const Item = props => {
   return (
     <React.Fragment>
       <li>
-        <Link to={slug} key={slug} className="link">
-          <div className="gatsby-image-outer-wrapper">
-            <Img fluid={fluid} />
-          </div>
-          <h1>
-            {title} <FaArrowRight className="arrow" />
-          </h1>
-          <p className="meta">
+        {/* <Link to={slug} key={slug} className="link"> */}
+        <div className="gatsby-image-outer-wrapper">
+          <Img fluid={fluid} />
+        </div>
+        <h1>
+          {title} <FaArrowRight className="arrow" />
+        </h1>
+        <p className="meta">
+          <span>
+            <FaCalendar size={18} /> {prefix}
+          </span>
+          <span>
+            <FaUser size={18} /> {author}
+          </span>
+          {category && (
             <span>
-              <FaCalendar size={18} /> {prefix}
+              <FaTag size={18} /> {category}
             </span>
-            <span>
-              <FaUser size={18} /> {author}
-            </span>
-            {category && (
-              <span>
-                <FaTag size={18} /> {category}
-              </span>
-            )}
-          </p>
-          <p>{excerpt}</p>
-        </Link>
+          )}
+        </p>
+        {/* <p>{excerpt}</p> */}
+        <p>
+          Приглашаем вас на Новогоднее представление для детей. Маленькие зрители встретятся с{" "}
+          <b>Дедом Морозом и Снегурочкой</b>, красавицей <b>Ёлочкой</b>, веселым <b>Снеговиком</b> и
+          другими сказочными героями. Будут песни, игры с залом, загадки, танцы и многое другое.
+          <br />
+          <br />
+          <b>Купить билеты онлайн:</b>
+          <br />
+          <br />
+          <a
+            href="https://ticketstripe.com/NY2020Columbia"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            — 7 декабря 2019, 18-00, Columbia MD
+          </a>
+          <br />
+          <a
+            href="https://ticketstripe.com/NY1219Rockville"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            — 19 декабря 2019, 18-30, Rockville MD
+          </a>
+          <br />
+          <a
+            href="https://ticketstripe.com/NY1220Rockville"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            — 20 декабря 2019, 18-00, Rockville MD
+          </a>
+          <br />
+          <a
+            href="https://ticketstripe.com/NY0105Virginia"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            — 5 января 2020, 17-00, Annandale VA
+          </a>
+          <br />
+          <br />
+          <h3>
+            <a href="/events">ПОДРОБНЕЕ О ПРЕДСТАВЛЕНИЯХ &rarr;</a>
+          </h3>
+        </p>
+        {/* </Link> */}
       </li>
 
       {/* --- STYLES --- */}

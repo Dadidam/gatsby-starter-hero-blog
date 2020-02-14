@@ -91,7 +91,7 @@ const Item = props => {
           <br />
           <br />
           <h3>
-            <a href="/events">ПОДРОБНЕЕ О ПРЕДСТАВЛЕНИИ &rarr;</a>
+            <a href="/events/wizard-of-oz/">ПОДРОБНЕЕ О ПРЕДСТАВЛЕНИИ &rarr;</a>
           </h3>
         </p>
         {/* </Link> */}

@@ -100,6 +100,13 @@ module.exports = {
         plugins: [
           `gatsby-plugin-sharp`,
           {
+            resolve: "gatsby-remark-embed-youtube",
+            options: {
+              width: 800,
+              height: 400
+            }
+          },
+          {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 800,
@@ -151,7 +158,7 @@ module.exports = {
         background_color: config.manifestBackgroundColor,
         theme_color: config.manifestThemeColor,
         display: config.manifestDisplay,
-        icon: `src/images/favicon-32x32.png`,
+        icon: `src/images/favicon-32x32.png`
         // icons: [
         //   {
         //     src: "/icons/icon-48x48.png",

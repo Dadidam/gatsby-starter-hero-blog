@@ -27,28 +27,74 @@ const Item = props => {
   return (
     <React.Fragment>
       <li>
-        <Link to={slug} key={slug} className="link">
-          <div className="gatsby-image-outer-wrapper">
-            <Img fluid={fluid} />
-          </div>
-          <h1>
-            {title} <FaArrowRight className="arrow" />
-          </h1>
-          <p className="meta">
+        {/* <Link to={slug} key={slug} className="link"> */}
+        <div className="gatsby-image-outer-wrapper">
+          <Img fluid={fluid} />
+        </div>
+        <h1>
+          {title} <FaArrowRight className="arrow" />
+        </h1>
+        <p className="meta">
+          <span>
+            <FaCalendar size={18} /> {prefix}
+          </span>
+          <span>
+            <FaUser size={18} /> {author}
+          </span>
+          {category && (
             <span>
-              <FaCalendar size={18} /> {prefix}
+              <FaTag size={18} /> {category}
             </span>
-            <span>
-              <FaUser size={18} /> {author}
-            </span>
-            {category && (
-              <span>
-                <FaTag size={18} /> {category}
-              </span>
-            )}
-          </p>
-          <p>{excerpt}</p>
-        </Link>
+          )}
+        </p>
+        {/* <p>{excerpt}</p> */}
+        <p>
+          Приглашаем ребят, а также их родителей, на музыкальный детский спектакль на русском языке
+          <b>"Волшебник Изумрудного Города"</b>. Спектакль повествует о путешествиях маленькой
+          девочки <b>Элли</b> в Волшебной стране. Её верными друзьями станут соломенное чучело
+          Страшила, Железный Дровосек, Трусливый Лев и отважный пёсик Тотошка.
+        </p>
+        <br />
+        <br />
+        <p>
+          Вместе они отправятся к <b>Великому и Ужасному Волшебнику Гудвину</b>, чтобы получить
+          мозги, сердце, храбрость и вернуться домой в Канзас. Но коварная колдунья Бастинда пойдёт
+          на любые злодейства, чтобы погубить друзей.
+          <br />
+          <br />
+          <b>Купить билеты онлайн:</b>
+          <br />
+          <br />
+          <a
+            href="https://ticketstripe.com/izumrud_rockville"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            — 7 марта 2020, 18-00, Rockville MD
+          </a>
+          <br />
+          <a
+            href="https://ticketstripe.com/izumrud_virginia"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            — 15 марта 2020, 17-00, Annandale VA
+          </a>
+          <br />
+          <a
+            href="https://ticketstripe.com/izumrud_columbia"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            — 3 мая 2020, 17-30, Columbia MD
+          </a>
+          <br />
+          <br />
+          <h3>
+            <a href="/events">ПОДРОБНЕЕ О ПРЕДСТАВЛЕНИИ &rarr;</a>
+          </h3>
+        </p>
+        {/* </Link> */}
       </li>
 
       {/* --- STYLES --- */}
